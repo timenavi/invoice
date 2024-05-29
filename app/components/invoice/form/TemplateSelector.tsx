@@ -19,6 +19,7 @@ import {
     BaseButton,
     InvoiceTemplate1,
     InvoiceTemplate2,
+    InvoiceTemplate3,
 } from "@/app/components";
 
 // Template images
@@ -34,20 +35,27 @@ const TemplateSelector = () => {
     const { watch, setValue } = useFormContext<InvoiceType>();
     const formValues = watch();
     const templates = [
-        {
-            id: 1,
-            name: "Template 1",
-            description: "Template 1 description",
-            img: template1,
-            component: <InvoiceTemplate1 {...formValues} />,
-        },
-        {
-            id: 2,
-            name: "Template 2",
-            description: "Second template",
-            img: template1,
-            component: <InvoiceTemplate2 {...formValues} />,
-        },
+      {
+        id: 1,
+        name: "Template 1",
+        description: "Template 1 description",
+        img: template1,
+        component: <InvoiceTemplate1 {...formValues} />,
+      },
+      {
+        id: 2,
+        name: "Template 2",
+        description: "Second template",
+        img: template1,
+        component: <InvoiceTemplate2 {...formValues} />,
+      },
+      {
+        id: 3,
+        name: "Template 3",
+        description: "Third template",
+        img: template1,
+        component: <InvoiceTemplate3 {...formValues} />,
+      },
     ];
     return (
         <>
