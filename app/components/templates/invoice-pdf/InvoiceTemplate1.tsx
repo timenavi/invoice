@@ -27,7 +27,7 @@ const InvoiceTemplate = (data: InvoiceType) => {
                             alt={`Logo of ${sender.name}`}
                         />
                     )}
-                    <h1 className="mt-2 text-lg md:text-xl font-semibold text-blue-600">
+                    <h1 className="mt-2 text-lg md:text-xl font-semibold text-[#1BA41B]">
                         {sender.name}
                     </h1>
                 </div>

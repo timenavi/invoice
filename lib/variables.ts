@@ -219,26 +219,26 @@ export const FORM_FILL_VALUES = {
                 total: 400,
             },
         ],
-        currency: "USD",
+        currency: "usd",
         language: "English",
         taxDetails: {
             amount: 15,
-            amountType: "percentage",
+            amountType: "amount",
             taxID: "987654321",
         },
-        discountDetails: {
-            amount: 5,
-            amountType: "percentage",
-        },
+        // discountDetails: {
+        //     amount: 5,
+        //     amountType: "percentage",
+        // },
         shippingDetails: {
             cost: 5,
             costType: "percentage",
         },
-        paymentInformation: {
-            bankName: "Bank Inc.",
-            accountName: "John Doe",
-            accountNumber: "445566998877",
-        },
+        // paymentInformation: {
+        //     bankName: "Bank Inc.",
+        //     accountName: "John Doe",
+        //     accountNumber: "445566998877",
+        // },
         additionalNotes: "Thank you for your business",
         paymentTerms: "Net 30",
         signature: {
@@ -246,7 +246,122 @@ export const FORM_FILL_VALUES = {
         },
         subTotal: "850",
         totalAmount: "850",
-        totalAmountInWords: "Eight Hundred Fifty",
-        pdfTemplate: 1,
+        // totalAmountInWords: "Eight Hundred Fifty",
+        pdfTemplate: 3,
     },
 };
+
+export type Currency = {
+  code: string;
+  symbol: string;
+  decimals: number;
+  ppp: number;
+  symbolPlacement?: "before" | "after";
+};
+
+
+// Most traded currencies taken from: https://en.wikipedia.org/wiki/Template:Most_traded_currencies
+// PPP exchange rates taken from: https://data.oecd.org/conversion/purchasing-power-parities-ppp.htm
+export const SUPPORTED_CURRENCIES: Currency[] = [
+  { code: "usd", symbol: "$", symbolPlacement: "before", decimals: 2, ppp: 1 },
+  { code: "eur", symbol: "€", symbolPlacement: "before", decimals: 2, ppp: 1 },
+  { code: "gbp", symbol: "£", symbolPlacement: "before", decimals: 2, ppp: 1 },
+  {
+    code: "brl",
+    symbol: "R$",
+    symbolPlacement: "before",
+    decimals: 2,
+    ppp: 2.52,
+  },
+  {
+    code: "cad",
+    symbol: "C$",
+    symbolPlacement: "before",
+    decimals: 2,
+    ppp: 1.253,
+  },
+  {
+    code: "jpy",
+    symbol: "¥",
+    symbolPlacement: "before",
+    decimals: 0,
+    ppp: 100,
+  },
+  {
+    code: "cny",
+    symbol: "CN¥",
+    symbolPlacement: "before",
+    decimals: 2,
+    ppp: 5.85,
+  },
+  {
+    code: "ils",
+    symbol: "₪",
+    symbolPlacement: "before",
+    decimals: 2,
+    ppp: 3.77,
+  },
+  {
+    code: "aud",
+    symbol: "A$",
+    symbolPlacement: "before",
+    decimals: 2,
+    ppp: 1.44,
+  },
+  {
+    code: "hkd",
+    symbol: "HK$",
+    symbolPlacement: "before",
+    decimals: 2,
+    ppp: 5.85,
+  },
+  {
+    code: "sgd",
+    symbol: "S$",
+    symbolPlacement: "before",
+    decimals: 2,
+    ppp: 0.84,
+  },
+  {
+    code: "sek",
+    symbol: "kr",
+    symbolPlacement: "after",
+    decimals: 2,
+    ppp: 8.7,
+  },
+  {
+    code: "chf",
+    symbol: "CHF ",
+    symbolPlacement: "before",
+    decimals: 2,
+    ppp: 1.105,
+  },
+  {
+    code: "pln",
+    symbol: "zł",
+    symbolPlacement: "after",
+    decimals: 2,
+    ppp: 1.84,
+  },
+  {
+    code: "inr",
+    symbol: "₹",
+    symbolPlacement: "before",
+    decimals: 2,
+    ppp: 23.2,
+  },
+  {
+    code: "rub",
+    symbol: "₽",
+    symbolPlacement: "before",
+    decimals: 2,
+    ppp: 28.0,
+  },
+  {
+    code: "php",
+    symbol: "₱",
+    symbolPlacement: "before",
+    decimals: 2,
+    ppp: 40.0,
+  },
+];
